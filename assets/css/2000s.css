@@ -1,12 +1,275 @@
-/* Add styles to all elements */
-* {
-	margin: 0; /* remove default margin from all elements */
-	padding: 0; /* remove default padding from all elements */
-	box-sizing: border-box; /* fix width calculation, more info here: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-sizing */
+/* 2000s.css */
+/* Rules: no flexbox, no grid, no media queries, no deprecated HTML. */
+
+/* ===== base ===== */
+body {
+	margin: 0;
+	background: #cfd6df;
+	font-family: Verdana, Arial, sans-serif;
+	color: #111;
 }
 
-/* Write your CSS below (feel free to change the styles already here) */
-body {
-	font-family: monospace;
-	background-color: rgb(147, 246, 140);
+/* ===== layout wrapper ===== */
+#wrap {
+	width: 820px;
+	margin: 40px auto;
+	background: #ffffff;
+	border: 1px solid #8b98a6;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.20);
+	position: relative;
+}
+
+/* absolute positioning requirement */
+#status {
+	position: absolute;
+	top: -18px;
+	right: 0;
+	font-size: 11px;
+	color: #566575;
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 0.5px;
+	animation: flicker 6s infinite;
+}
+
+/* ===== header ===== */
+#header {
+	background: linear-gradient(#5a86b4, #2f567e);
+	color: #fff;
+	padding: 28px 28px 18px 28px;
+	position: relative;
+}
+
+#header h1 {
+	margin: 0;
+	font-size: 34px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	font-family: Georgia, "Times New Roman", serif;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+}
+
+.sub {
+	margin: 8px 0 0 0;
+	font-size: 12px;
+	opacity: 0.95;
+}
+
+/* absolute badge */
+#badge {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: linear-gradient(#ffe26a, #ffc400);
+	color: #000;
+	border: 1px solid #9b7a00;
+	font-size: 11px;
+	padding: 6px 10px;
+	border-radius: 4px;
+	box-shadow: 0 2px 0 rgba(0,0,0,0.25);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* ===== nav ===== */
+#nav {
+	background: linear-gradient(#f7f9fb, #dfe7ef);
+	border-top: 1px solid #93a2b2;
+	border-bottom: 1px solid #93a2b2;
+	padding: 10px 12px;
+	position: relative;
+}
+
+.tab {
+	display: inline-block;
+	margin-right: 10px;
+	padding: 8px 12px;
+	text-decoration: none;
+	color: #0e2336;
+	font-size: 12px;
+	border: 1px solid #9aa9b8;
+	background: linear-gradient(#ffffff, #cfd8e2);
+	border-radius: 5px;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset;
+}
+
+/* hover + active requirements */
+.tab:hover {
+	background: linear-gradient(#ffffff, #bfcbd7);
+	border-color: #7b8ea1;
+	color: #000;
+}
+
+.tab:active {
+	position: relative;
+	top: 1px;
+	background: #b7c3cf;
+}
+
+.current {
+	background: linear-gradient(#ffffff, #b9d2ea);
+	border-color: #5f86a8;
+}
+
+/* decorative “shine” that moves across nav on hover (2000s glossy vibe) */
+#shine {
+	position: absolute;
+	top: 0;
+	left: -140px;
+	width: 120px;
+	height: 100%;
+	background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.55), rgba(255,255,255,0));
+	opacity: 0;
+}
+
+/* when the nav is hovered, animate shine across */
+#nav:hover #shine {
+	opacity: 1;
+	animation: shine 1.6s;
+}
+
+/* ===== content ===== */
+#content {
+	padding: 22px 28px 60px 28px;
+	font-size: 13px;
+	line-height: 1.75;
+}
+
+/* hover-based “reading focus” */
+#content p:hover {
+	background: #f2f7fc;
+	border-left: 3px solid #5a86b4;
+	padding-left: 10px;
+}
+
+.panel {
+	border: 1px solid #d6dde5;
+	background: #fbfcfd;
+	padding: 16px 16px 10px 16px;
+	margin: 18px 0;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+.panel-title {
+	margin: 0 0 10px 0;
+	font-size: 12px;
+	font-weight: normal;
+	color: #2f567e;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* lead paragraph */
+.lead {
+	font-size: 15px;
+	line-height: 1.7;
+	color: #0f1a22;
+}
+
+/* quotes */
+.quote {
+	margin: 16px 0;
+	padding: 12px 12px 12px 14px;
+	background: #eef4fb;
+	border-left: 4px solid #2f567e;
+	color: #2a3947;
+	font-style: italic;
+}
+
+/* animate TEXT (as requested) */
+.animated-text {
+	animation: breathe 6s ease-in-out infinite;
+}
+
+/* callout line */
+.callout {
+	background: #fff7d6;
+	border: 1px solid #e7d28a;
+	padding: 10px 12px;
+}
+
+/* links block */
+.links {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 12px;
+	background: #f5f5f5;
+	border: 1px dashed #bbb;
+	padding: 10px;
+}
+
+/* signature */
+.signature {
+	font-style: italic;
+	color: #333;
+}
+
+/* ===== hover-reveal note ===== */
+.note {
+	position: relative;
+	margin: 0 0 18px 0;
+	padding: 10px 12px;
+	border: 1px solid #cfd8e2;
+	background: linear-gradient(#ffffff, #f0f4f8);
+	font-size: 12px;
+	color: #3b4a59;
+}
+
+.note-title {
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.note-body {
+	display: inline-block;
+	margin-left: 8px;
+	opacity: 0.55;
+}
+
+/* make it “more interactive” */
+.note:hover .note-body {
+	opacity: 1;
+	letter-spacing: 0.6px;
+}
+
+/* ===== back to top ===== */
+.backtop {
+	position: fixed;
+	right: 18px;
+	bottom: 18px;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0e2336;
+	background: linear-gradient(#ffffff, #cfd8e2);
+	border: 1px solid #9aa9b8;
+	padding: 8px 10px;
+	border-radius: 6px;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.20);
+}
+
+.backtop:hover {
+	background: linear-gradient(#ffffff, #bfcbd7);
+}
+
+.backtop:active {
+	position: fixed;
+	bottom: 17px;
+}
+
+/* ===== keyframes ===== */
+@keyframes breathe {
+	0% { opacity: 0.65; letter-spacing: 0px; }
+	50% { opacity: 1; letter-spacing: 0.6px; }
+	100% { opacity: 0.65; letter-spacing: 0px; }
+}
+
+@keyframes flicker {
+	0%, 100% { opacity: 0.45; }
+	50% { opacity: 1; }
+}
+
+@keyframes shine {
+	0% { left: -140px; }
+	100% { left: 900px; }
 }
