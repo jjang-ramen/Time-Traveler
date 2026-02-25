@@ -1,27 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Time Traveler</title>
-	<link rel="stylesheet" href="assets/css/homepage.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Traveler</title>
+
+<style>
+
+/* ---------- GLOBAL ---------- */
+
+body {
+	margin: 0;
+	background: #e6e6e6; /* early web gray */
+	font-family: Georgia, "Times New Roman", serif; /* 90s editorial feel */
+	color: #111;
+}
+
+/* ---------- CONTAINER (2000s blog aesthetic) ---------- */
+
+.wrapper {
+	max-width: 720px;
+	margin: 40px auto;
+	background: white;
+	border: 2px solid #000; /* visible structure = 90s */
+	box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* 2000s web polish */
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+	padding: 28px;
+	border-bottom: 1px solid #ccc;
+	background: linear-gradient(#ffffff, #f2f2f2); /* 2000s gradient */
+}
+
+h1 {
+	margin: 0;
+	font-size: 34px;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+
+header p {
+	margin: 6px 0;
+	font-size: 14px;
+}
+
+/* ---------- LINKS ---------- */
+
+a:link { color: blue; }      /* 90s */
+a:visited { color: purple; } /* 90s */
+a:hover {
+	text-decoration: underline;
+	opacity: 0.75;
+	transition: 0.2s; /* 2000s hover softness */
+}
+
+/* ---------- NAV ---------- */
+
+nav {
+	padding: 28px;
+}
+
+nav h2 {
+	font-family: Arial, Helvetica, sans-serif; /* early web sans */
+	font-size: 18px;
+	margin-bottom: 18px;
+}
+
+/* 2010s layout */
+nav ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+/* hybrid button links */
+nav a {
+	display: block;
+	padding: 10px 14px;
+	border: 1px solid #000;
+	background: #fafafa;
+	font-family: Courier, monospace; /* 90s code feel */
+	text-decoration: none;
+}
+
+/* 2000s interactive feel */
+nav a:hover {
+	background: #000;
+	color: white;
+}
+
+/* ---------- FOOTER NOTE ---------- */
+
+.footer {
+	padding: 18px 28px;
+	font-size: 12px;
+	font-family: Courier, monospace;
+	border-top: 1px dashed #bbb;
+	color: #555;
+}
+
+</style>
 </head>
+
 <body>
 
-	<header>
-		<h1>Time Traveler</h1>
-		<p><em>Website: [your name here]</em></p>
-		<p><em>Article: <a href="https://luckysoap.com/statements/handmadeweb.html" target="_blank">“A Handmade Web”</a> by J. R. Carpenter</em></p>
-	</header>
+<div class="wrapper">
 
-	<nav>
-		<h2>Pick a version!</h2>
-		<ul>
-			<li><a href="1990s/">1990s Version</a></li>
-			<li><a href="2000s/">2000s Version</a></li>
-			<li><a href="2010s/">2000s Version</a></li>
-		</ul>
-	</nav>
+<header>
+	<h1>Time Traveler</h1>
+	<p><em>Website: JunYong Jang </em></p>
+	<p><em>Article: <a href="https://luckysoap.com/statements/handmadeweb.html" target="_blank">“A Handmade Web”</a> by J. R. Carpenter</em></p>
+</header>
+
+<nav>
+	<h2>Pick a version!</h2>
+	<ul>
+		<li><a href="1990s/">1990s Version</a></li>
+		<li><a href="2000s/">2000s Version</a></li>
+		<li><a href="2010s/">2010s Version</a></li>
+	</ul>
+</nav>
+
+<div class="footer">
+	best viewed at any resolution • built across decades of the web
+</div>
+
+</div>
 
 </body>
 </html>
